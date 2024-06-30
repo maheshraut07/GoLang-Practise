@@ -102,7 +102,7 @@ func addStudent(w http.ResponseWriter, r *http.Request){
 
 	query := `INSERT INTO stud (name, age , class, subject, enrollment_number,is_deleted) VALUES (?,?,?,?,?,false)`
 
-	err = session.Query(query,stud.Name,stud.Age,stud.Class,stud.Subject,stud.EnrollmentNumber).Exec()
+	_ = session.Query(query,stud.Name,stud.Age,stud.Class,stud.Subject,stud.EnrollmentNumber).Exec()
 
 	// return the UUID as response
 }
