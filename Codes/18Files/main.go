@@ -7,6 +7,27 @@ import (
 	"os"
 )
 
+func readFile(filename string ){
+	databyte , err := ioutil.ReadFile(filename) // for reading the file we have ioUtil package
+
+	checkNilErr(err)
+
+	content := string(databyte)
+
+	fmt.Println("Text data inside the file is :  \n", content)
+}
+
+func checkNilErr (err error){
+	if err!= nil{
+		panic(err)  // panic will shut down the execution of the program 
+    }
+}
+
+// for creating the  files there is io utility
+// for reading those files  we have ioUtils utility
+
+// files are being read in a databyte format not in a string format 
+
 func main(){
 	fmt.Println("Welcome to the file ")
 
@@ -33,23 +54,3 @@ func main(){
 
 }
 
-func readFile(filename string ){
-	databyte , err := ioutil.ReadFile(filename) // for reading the file we have ioUtil package
-
-	checkNilErr(err)
-
-	content := string(databyte)
-
-	fmt.Println("Text data inside the file is :  \n", content)
-}
-
-func checkNilErr (err error){
-	if err!= nil{
-		panic(err)  // panic will shut down the execution of the program 
-    }
-}
-
-// for creating the  files there is io utility
-// for reading those files  we have ioUtils utility
-
-// files are being read in a databyte format not in a string format 

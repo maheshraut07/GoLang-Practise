@@ -6,6 +6,7 @@ import (
 )
 
 const myurl string = "https://loc.dev:3000/learn?coursename=reactjs&paymentid=ghbj456ghb"
+// const myurl string = "https://jsonplaceholder.typicode.com/todos/1"
 
 func main (){
 	fmt.Println("Welcome to the lecture of handling URLs")

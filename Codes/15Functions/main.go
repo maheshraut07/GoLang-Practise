@@ -2,12 +2,53 @@ package main
 
 import "fmt"
 
+
+func greeter (){
+	fmt.Println("hii from the greeter function")
+}
+
+func greetertwo( a int ,  b int){
+
+	fmt.Println("hii from the greetertwo function")
+	fmt.Printf("the addition of %v and %v is %v  ",a,b,a+b)
+}
+
+func adder(a int, b int) int {  // this is the return type of the function 
+	return a + b
+}
+
+// if you dont know how many parameters are inside the function then you can define the following function
+
+func proAdder(values ...int)int {
+	 
+	total := 0;
+
+	for _ , val := range values{
+		total += val
+	}
+
+	return total
+}
+
+// there is another method for returning multiple values 
+
+func proAdder2(values ...int)(int, string) {
+	 
+	total := 0;
+
+	for _ , val := range values{
+		total += val
+	}
+
+	return total , "hii the addition is calculated "
+}
+
 func main(){
 
 	
 	fmt.Println("welcome to functions in the golang")
 
-	// you cant define the function inside the another function 
+	// you can't define the function inside the another function 
 
 	greeter()
 	greetertwo(2,3)
@@ -27,46 +68,5 @@ func main(){
 	fmt.Println()
 
 
-}
-
-
-func greeter (){
-	fmt.Println("hii from the greeter function")
-}
-
-func greetertwo( a int ,  b int){
-
-	fmt.Println("hii from the greetertwo function")
-	fmt.Printf("the addition of %v and %v is %v  ",a,b,a+b)
-}
-
-func adder(a int, b int) int {  // this is the return type of the function 
-	return a + b
-}
-
-// if you dont know how many parameters are inside the function then you can define the following function
-
-func proAdder(values ...int)int {
-     
-	total := 0;
-
-	for _ , val := range values{
-		total += val
-	}
-
-	return total
-}
-
-// there is another method for returning multiple values 
-
-func proAdder2(values ...int)(int, string) {
-     
-	total := 0;
-
-	for _ , val := range values{
-		total += val
-	}
-
-	return total , "hii the addition is calculated "
-}
+}	
 

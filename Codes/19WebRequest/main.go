@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-const url string  = "https://courses.learncodeonline.in/"
+const url string  = "https://jsonplaceholder.typicode.com/todos/1"
 
 func main(){
 	fmt.Println("it is the lecture for the web request")

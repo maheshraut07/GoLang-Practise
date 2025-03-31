@@ -9,7 +9,7 @@ func main(){
 	logicount := 23
 	var result string 
 
-	if logicount < 10{
+	if (logicount < 10){
 		result = "Regular User"
 	}else if logicount > 10{
 		result = "watch out "

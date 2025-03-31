@@ -18,6 +18,7 @@ func main() {
 
 	mahesh := User{"mahesh","rautmahesh213@gmail.com",true,21}
 	fmt.Println(mahesh)
+	fmt.Printf("the type of mahesh is : %T\n",mahesh)
 
 	fmt.Printf("mahesh details are : %+v\n", mahesh)
 	fmt.Println()
