@@ -14,6 +14,7 @@ func main(){
 	languages["PY"] = "Python"
 
 	fmt.Println("List of the all languages is : ", languages)
+	fmt.Printf("the type of the languages is : %T\n", languages)
 	fmt.Println("shortcut for js is :",languages["JS"])
     
 
@@ -26,6 +27,7 @@ func main(){
 		fmt.Printf("For key %v , value is %v\n", key, value)
 
 	}
+	
 
 
 }
