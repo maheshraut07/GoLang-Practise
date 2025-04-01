@@ -1,30 +1,28 @@
+// Online Go compiler to run Golang program online
+// Print "Try programiz.pro" message
+
 package main
 
 import (
-    "fmt"
-    "bufio"
-    "os"
+	"errors"
+	"fmt"
+	"log"
+	"net/http"
 )
 
 func main() {
     
+    // const myurl string = "https://jsonplaceholder.typicode.com/todos/1"
+    const myurl string = "https://localhost/3000"
     
-    var subjects = []string{"maths", "english", "science"}
-    var names = [3]string{"mahesh", "sumit", "vicky"}
-
-    fmt.Printf("The type of the names array is: %T\n", names)
-    fmt.Println()
-    fmt.Printf("The type of the subject slice is: %T\n", subjects)
-    fmt.Println()
-    fmt.Println("This is slice:", subjects)
-
-    fmt.Println("The length of the subjects is:", len(subjects))
-    fmt.Println("The first two elements in the subjects are:", subjects[0:2])
-    fmt.Println()
+    response,err := http.Get(myurl)
     
+    if err != nil{
+        errors.New("some error is coming: ")
+        log.Fatal(err)
+                
+    }
     
-	reader := bufio.NewReader(os.Stdin)
-    fmt.Println("enter the any number: ")
-    input, _ := reader.ReadString('\n')
-    fmt.Println("the inputted number is : ", input)
+    fmt.Println("the response is : ", response)
+    fmt.Println("the response body is : ", response.Body)
 }

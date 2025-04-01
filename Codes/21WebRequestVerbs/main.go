@@ -13,7 +13,8 @@ func main(){
 }
 
 func PerformGetRequest(){
-	const myurl = "http://localhost:3000/"
+	// const myurl = "http://localhost:3000/"
+	const myurl = "https://jsonplaceholder.typicode.com/todos/1"
 
 	response , err := http.Get(myurl)
 
@@ -32,8 +33,8 @@ func PerformGetRequest(){
 
 	var responseString strings.Builder
 
-	content , _ := ioutil.ReadAll(response.Body)   // the content will be in the byte format 
-	bytecount, _ := responseString.Write(content)
+	byteform_content , _ := ioutil.ReadAll(response.Body)   // the content will be in the byte format 
+	bytecount, _ := responseString.Write(byteform_content)
 	
 	fmt.Println("Bytecount is : ",bytecount)
 	fmt.Println("the actual data in the response is : ",responseString.String())
@@ -42,7 +43,7 @@ func PerformGetRequest(){
 	// so we will convert it first in the format of the string 
 	
 
-	fmt.Println("the actual data in the response is : ", string(content))
+	fmt.Println("the actual data in the response is : ", string(byteform_content))
 
 }
 
